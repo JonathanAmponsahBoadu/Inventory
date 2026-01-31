@@ -18,7 +18,7 @@ const options = {
         description: "Development server",
       },
       {
-        url: process.env.SERVER_URL || "http://localhost:3000",
+        url: process.env.SERVER_URL,
         description: "Production server",
       },
     ],
