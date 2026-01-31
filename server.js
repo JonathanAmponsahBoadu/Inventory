@@ -65,9 +65,12 @@ app.use((req, res) => {
 });
 
 const PORT = process.env.PORT || 3000;
+const BASE_URL =
+  process.env.NODE_ENV === "production"
+    ? "https://inventory-gu41.onrender.com"
+    : `http://localhost:${PORT}`;
+
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
-  console.log(
-    `Swagger documentation available at http://localhost:${PORT}/api-docs`,
-  );
+  console.log(`Swagger documentation available at ${BASE_URL}/api-docs`);
 });
